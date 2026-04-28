@@ -64,4 +64,4 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: us-east-2
-        MY_base_url: ${{ secrets.REACT_APP_MY_BASE_URL }}
+        MY_base_url: ${{ secrets.REACT_APP_API_BASE_URL }}
