@@ -1,12 +1,14 @@
+Dockerfile
+
 # 1. Build Stage
 FROM node:18-alpine AS build
 WORKDIR /app
 COPY package.json ./
-ARG REACT_APP_MY_BASE_URL
-# 환경 변수로 설정 (React 빌드 시 사용됨)
-ENV REACT_APP_MY_BASE_URL=$REACT_APP_MY_BASE_URL
 RUN npm install
 COPY . ./
+ARG REACT_APP_API_BASE_URL
+ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
+
 RUN npm run build
 
 # 2. Production Stage (Nginx)
